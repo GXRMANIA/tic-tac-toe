@@ -1,4 +1,4 @@
-const gameboard = (() => {
+const game = (() => {
     
     let gameboardActive = true;
     let aiMode = false;
@@ -35,9 +35,11 @@ const gameboard = (() => {
     inputPlayer2.addEventListener("keyup", changeName);
     aiBtn.addEventListener("click", startAi)
 
+
     let gameboard = ["","","",
                      "","","",
                      "","",""];
+
 
     function render() {
         for(let i = 0; i<gameboard.length; i++) {
@@ -57,7 +59,6 @@ const gameboard = (() => {
         if(aiMode) {
             setTimeout(makeAiMove, 1000);
         }
-        console.log(returnWinner())
         if(returnWinner() != false) {
             endgame();
         }
@@ -89,12 +90,19 @@ const gameboard = (() => {
             return gameboard[0]
         } else if(gameboard[2] == gameboard[4] && gameboard[4] == gameboard[6] && gameboard[4] != "") {
             return gameboard[0]
+        } else if(!gameboard.includes("")) {
+            return "tie"
         } else {
             return false;
         }
     }
 
     function endgame() {
+        if(returnWinner() == "tie") {
+            display.textContent = "Its a tie!"
+            gameboardActive = false;
+            return;
+        }
         display.textContent = returnWinner().name + " won!"
         gameboardActive = false;
     }
