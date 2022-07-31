@@ -13,9 +13,25 @@
 }
 
 .gameboard-container > div {
-    border: 5px solid red;
+    border: 5px solid rgb(151, 151, 151);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 60px;
+}
+
+.control-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 30px 30px 30px;
+    gap: 30px;
 }

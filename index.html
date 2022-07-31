@@ -9,18 +9,31 @@
 </head>
 <body>
 
-    <div class="gameboard-container">
-        <div data-index="0"></div>
-        <div data-index="1"></div>
-        <div data-index="2"></div>
-
-        <div data-index="3"></div>
-        <div data-index="4"></div>
-        <div data-index="5"></div>
-
-        <div data-index="6"></div>
-        <div data-index="7"></div>
-        <div data-index="8"></div>
+    <div class="outer-container">
+        <div class="gameboard-container">
+            <div class="field" data-index="0"></div>
+            <div class="field" data-index="1"></div>
+            <div class="field" data-index="2"></div>
+            <div class="field" data-index="3"></div>
+            <div class="field" data-index="4"></div>
+            <div class="field" data-index="5"></div>
+            <div class="field" data-index="6"></div>
+            <div class="field" data-index="7"></div>
+            <div class="field" data-index="8"></div>
+        </div>
+        <div class="control-container">
+            <button class="restart-button">Restart</button>
+            <button class="ai-button">Versus AI</button>
+            <div>
+                <label for="player1">Name Player 1 (X)</label>
+                <input type="text" id="player1">
+            </div>
+            <div>
+                <label for="player2">Name Player 2 (O)</label>
+                <input type="text" id="player2">
+            </div>
+            <div class="display"></div>
+        </div>
     </div>
 
     <script src="app.js"></script>
